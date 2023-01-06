@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
+// import 'package:flutter_staggered_grid_view/flutter_staggered_grid_view.dart';
 
 class SearchScreen extends StatelessWidget {
   const SearchScreen({super.key});
@@ -9,44 +9,46 @@ class SearchScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: Color(0xFF1C1F2E),
       body: SafeArea(
-        child: ,
+        child: SafeArea(
+          child: Text('d'),
+        ),
       ),
     );
   }
 
   Widget _getContent() => Column(
-          children: [
-            Container(
-              height: 46,
-              margin: EdgeInsets.only(left: 18, right: 18, top: 12),
-              decoration: BoxDecoration(
-                color: Color(0xFF272B40),
-                borderRadius: BorderRadius.circular(14),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 10),
-                child: Row(
-                  children: [
-                    Image.asset('images/icon_search.png'),
-                    SizedBox(width: 16),
-                    Expanded(
-                      child: TextField(
-                        decoration: InputDecoration(
-                          hintText: 'Search User',
-                          hintStyle: TextStyle(color: Colors.white),
-                          enabledBorder: InputBorder.none,
-                          focusedBorder: InputBorder.none,
-                        ),
+        children: [
+          Container(
+            height: 46,
+            margin: EdgeInsets.only(left: 18, right: 18, top: 12),
+            decoration: BoxDecoration(
+              color: Color(0xFF272B40),
+              borderRadius: BorderRadius.circular(14),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 10),
+              child: Row(
+                children: [
+                  Image.asset('images/icon_search.png'),
+                  SizedBox(width: 16),  
+                  Expanded(
+                    child: TextField(
+                      decoration: InputDecoration(
+                        hintText: 'Search User',
+                        hintStyle: TextStyle(color: Colors.white),
+                        enabledBorder: InputBorder.none,
+                        focusedBorder: InputBorder.none,
                       ),
                     ),
-                    Image.asset('images/icon_scan.png'),
-                  ],
-                ),
+                  ),
+                  Image.asset('images/icon_scan.png'),
+                ],
               ),
             ),
-            _getStoryList(),
-            ],
-        );
+          ),
+          _getStoryList(),
+        ],
+      );
 
   Widget _getStoryList() {
     return Container(
