@@ -32,36 +32,6 @@ class HomeScreen extends StatelessWidget {
         child: CustomScrollView(
           slivers: [
             SliverToBoxAdapter(
-              child: ElevatedButton(
-                onPressed: () {
-                  showModalBottomSheet(
-                    isScrollControlled: true,
-                    barrierColor: Colors.transparent,
-                    backgroundColor: Colors.transparent,
-                    context: context,
-                    builder: (context) {
-                      return Padding(
-                        padding: EdgeInsets.only(
-                          bottom: MediaQuery.of(context).viewInsets.bottom,
-                        ),
-                        child: DraggableScrollableSheet(
-                          initialChildSize: .4,
-                          minChildSize: .2,
-                          maxChildSize: .7,
-                          builder: (context, scrollController) {
-                            return ShareBottomSheet(
-                              scrollController: scrollController,
-                            );
-                          },
-                        ),
-                      );
-                    },
-                  );
-                },
-                child: Text('Open BottomSheet'),
-              ),
-            ),
-            SliverToBoxAdapter(
               child: _getStoryList(),
             ),
             SliverList(
@@ -71,7 +41,7 @@ class HomeScreen extends StatelessWidget {
                     SizedBox(
                       height: 34,
                     ),
-                    _getPostHeader(),
+                    _getPostHeader(context),
                     SizedBox(
                       height: 24,
                     ),
@@ -110,7 +80,7 @@ class HomeScreen extends StatelessWidget {
             SizedBox(
               height: 34,
             ),
-            _getPostHeader(),
+            _getPostHeader(context),
             SizedBox(
               height: 24,
             ),
@@ -212,7 +182,7 @@ class HomeScreen extends StatelessWidget {
     );
   }
 
-  Widget _getPostHeader() {
+  Widget _getPostHeader(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.symmetric(horizontal: 18),
       child: Row(
@@ -237,7 +207,34 @@ class HomeScreen extends StatelessWidget {
             ),
           ),
           Spacer(),
-          Image.asset('images/icon_menu.png')
+          GestureDetector(
+            onTap: () {
+              showModalBottomSheet(
+                isScrollControlled: true,
+                barrierColor: Colors.transparent,
+                backgroundColor: Colors.transparent,
+                context: context,
+                builder: (context) {
+                  return Padding(
+                    padding: EdgeInsets.only(
+                      bottom: MediaQuery.of(context).viewInsets.bottom,
+                    ),
+                    child: DraggableScrollableSheet(
+                      initialChildSize: .4,
+                      minChildSize: .2,
+                      maxChildSize: .7,
+                      builder: (context, scrollController) {
+                        return ShareBottomSheet(
+                          scrollController: scrollController,
+                        );
+                      },
+                    ),
+                  );
+                },
+              );
+            },
+            child: Image.asset('images/icon_menu.png'),
+          )
         ],
       ),
     );
