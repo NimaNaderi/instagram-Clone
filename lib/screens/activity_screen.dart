@@ -139,15 +139,9 @@ class _ActivityScreenState extends State<ActivityScreen>
               width: 8,
             ),
             SizedBox(
-              width: 40,
-              height: 40,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: FittedBox(
-                  fit: BoxFit.cover,
-                  child: Image.asset('images/item8.png'),
-                ),
-              ),
+              width: 46,
+              height: 46,
+              child: Image.asset('images/designer.png'),
             ),
             SizedBox(
               width: 10,

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/main_screen.dart';
+import 'package:instagram/screens/switch_account_screen.dart';
 
 class LoginScreen extends StatefulWidget {
   const LoginScreen({super.key});
@@ -54,9 +56,11 @@ class _LoginScreenState extends State<LoginScreen> {
     return Column(
       children: [
         Expanded(
+          flex: 45,
           child: Container(),
         ),
         Expanded(
+          flex: 55,
           child: Container(
             decoration: BoxDecoration(
               borderRadius: BorderRadius.only(
@@ -156,16 +160,22 @@ class _LoginScreenState extends State<LoginScreen> {
                 SizedBox(
                   height: 32,
                 ),
-                // SizedBox(
-                //   height: 46,
-                //   width: 129,
-                //   child: ElevatedButton(
-                //     onPressed: () {},
-                //     child: Text(
-                //       'sign in',
-                //     ),
-                //   ),
-                // ),
+                SizedBox(
+                  height: 46,
+                  width: 129,
+                  child: ElevatedButton(
+                    onPressed: () {
+                      Navigator.of(context).pushReplacement(
+                        MaterialPageRoute(
+                          builder: (context) => SwitchAccountScreen(),
+                        ),
+                      );
+                    },
+                    child: Text(
+                      'sign in',
+                    ),
+                  ),
+                ),
                 // SizedBox(
                 //   height: 30,
                 // ),

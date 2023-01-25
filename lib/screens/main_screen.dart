@@ -72,7 +72,7 @@ class _MainScreenState extends State<MainScreen> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6),
                   child: FittedBox(
-                    child: Image.asset('images/profile.png'),
+                    child: Image.asset('images/designer.png'),
                     fit: BoxFit.cover,
                   ),
                 ),
@@ -90,7 +90,7 @@ class _MainScreenState extends State<MainScreen> {
                 child: ClipRRect(
                   borderRadius: BorderRadius.circular(6),
                   child: FittedBox(
-                    child: Image.asset('images/profile.png'),
+                    child: Image.asset('images/designer.png'),
                     fit: BoxFit.cover,
                   ),
                 ),

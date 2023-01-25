@@ -1,6 +1,8 @@
 import 'dart:ui';
 
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/main_screen.dart';
 
 class SwitchAccountScreen extends StatelessWidget {
   const SwitchAccountScreen({super.key});
@@ -41,23 +43,29 @@ class SwitchAccountScreen extends StatelessWidget {
                           borderRadius: BorderRadius.circular(16),
                           color: Colors.red,
                         ),
-                        height: 352,
+                        height: 350,
                         width: 340,
                         child: Column(
                           children: [
                             SizedBox(
-                              height: 32,
+                              height: 18,
                             ),
-                            Image(image: AssetImage('images/profile.png')),
                             SizedBox(
-                              height: 20,
+                              height: 160,
+                              child: Image(
+                                image: AssetImage('images/designer.png'),
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                            SizedBox(
+                              height: 18,
                             ),
                             Text(
                               'Nima Naderi',
                               style: Theme.of(context).textTheme.headline4,
                             ),
                             SizedBox(
-                              height: 20,
+                              height: 22,
                             ),
                             SizedBox(
                               height: 46,
@@ -65,7 +73,12 @@ class SwitchAccountScreen extends StatelessWidget {
                               child: ElevatedButton(
                                 style:
                                     Theme.of(context).elevatedButtonTheme.style,
-                                onPressed: () {},
+                                onPressed: () =>
+                                    Navigator.of(context).pushReplacement(
+                                  CupertinoPageRoute(
+                                    builder: (context) => MainScreen(),
+                                  ),
+                                ),
                                 child: Text(
                                   'Confirm',
                                 ),

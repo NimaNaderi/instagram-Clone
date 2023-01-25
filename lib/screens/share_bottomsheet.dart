@@ -102,7 +102,7 @@ class ShareBottomSheet extends StatelessWidget {
                 (context, index) {
                   return _getItemGrid();
                 },
-                childCount: 100,
+                childCount: 28,
               ),
               gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
                 crossAxisCount: 4,
@@ -142,7 +142,7 @@ class ShareBottomSheet extends StatelessWidget {
           height: 60,
           child: ClipRRect(
             borderRadius: BorderRadius.circular(16),
-            child: Image.asset('images/profile.png'),
+            child: Image.asset('images/designer.png'),
           ),
         ),
         SizedBox(height: 10),

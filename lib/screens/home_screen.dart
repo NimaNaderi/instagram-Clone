@@ -200,7 +200,7 @@ class HomeScreen extends StatelessWidget {
                       color: Colors.white, fontSize: 12, fontFamily: 'GM'),
                 ),
                 Text(
-                  'نیما نادری برنامه نویس موبایل',
+                  'نیما برنامه نویس موبایل',
                   style: TextStyle(color: Colors.white, fontFamily: 'SM'),
                 ),
               ],
@@ -253,7 +253,7 @@ class HomeScreen extends StatelessWidget {
         child: Container(
           height: 38,
           width: 38,
-          child: Image.asset('images/profile.png'),
+          child: Image.asset('images/designer.png'),
         ),
       ),
     );
@@ -267,16 +267,16 @@ class HomeScreen extends StatelessWidget {
           DottedBorder(
             borderType: BorderType.RRect,
             radius: Radius.circular(16),
-            padding: EdgeInsets.all(4),
+            padding: EdgeInsets.all(2),
             color: Color(0xFFF35383),
             dashPattern: [50, 10],
             strokeWidth: 2,
             child: ClipRRect(
               borderRadius: BorderRadius.circular(16),
               child: Container(
-                height: 58,
-                width: 58,
-                child: Image.asset('images/profile.png'),
+                height: 60,
+                width: 60,
+                child: Image.asset('images/designer.png'),
               ),
             ),
           ),
@@ -297,8 +297,8 @@ class HomeScreen extends StatelessWidget {
       children: [
         Container(
           margin: EdgeInsets.symmetric(horizontal: 8, vertical: 12),
-          width: 64,
-          height: 64,
+          width: 62,
+          height: 62,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(18),
             border: Border.all(

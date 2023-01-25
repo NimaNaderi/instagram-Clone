@@ -1,4 +1,6 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:instagram/screens/login_screen.dart';
 import 'package:instagram/screens/main_screen.dart';
 import 'package:instagram/screens/user_pofile_screen.dart';
 
@@ -34,13 +36,32 @@ class Application extends StatelessWidget {
         ),
       ),
       debugShowCheckedModeBanner: false,
-      home: MainScreen(),
+      home: SplashScreen(),
     );
   }
 }
 
-class SplashScreen extends StatelessWidget {
+class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
+
+  @override
+  State<SplashScreen> createState() => _SplashScreenState();
+}
+
+class _SplashScreenState extends State<SplashScreen> {
+  @override
+  void initState() {
+    // TODO: implement initState
+    super.initState();
+
+    Future.delayed(
+      Duration(seconds: 2),
+      (() {
+        final page = LoginScreen();
+        Navigator.of(context).pushReplacement(CustomPageRoute(page));
+      }),
+    );
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -84,4 +105,31 @@ class SplashScreen extends StatelessWidget {
       ),
     );
   }
+}
+
+class CustomPageRoute<T> extends PageRoute<T> {
+  CustomPageRoute(this.child);
+  @override
+  // TODO: implement barrierColor
+  Color get barrierColor => Colors.black;
+
+  @override
+  String? get barrierLabel => null;
+
+  final Widget child;
+
+  @override
+  Widget buildPage(BuildContext context, Animation<double> animation,
+      Animation<double> secondaryAnimation) {
+    return FadeTransition(
+      opacity: animation,
+      child: child,
+    );
+  }
+
+  @override
+  bool get maintainState => true;
+
+  @override
+  Duration get transitionDuration => Duration(milliseconds: 1000);
 }
